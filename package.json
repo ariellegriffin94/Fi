@@ -1,0 +1,23 @@
+{
+  "name": "Fi",
+  "version": "1.0.0",
+  "description": "Finance App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Webdeskme/Fi.git"
+  },
+  "keywords": [],
+  "author": "Adam W. Telford",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Webdeskme/Fi/issues"
+  },
+  "homepage": "https://github.com/Webdeskme/Fi#readme",
+  "devDependencies": {
+    "electron": "^11.1.1"
+  }
+}
