@@ -60,7 +60,7 @@ $(document).ready(function () {
 
   $("#billingForm").submit(function (event) {
     var createHTML = require("create-html");
-
+    console.log(event);
     const { shell } = require("electron"); // deconstructing assignment
     let appDir = (wd_home = wd_homedir + "/Documents/FI/");
 
@@ -146,7 +146,7 @@ $(document).ready(function () {
     table += `<p><strong>Phone: </strong>${phone}`;
     table += `<p><strong>Email: </strong>${email}`;
     table += `<p><strong>Loan Amount: $</strong>${totalAmount}</p>`;
-    table += `<p><strong>Total Interest: $</strong>${praseFoat(
+    table += `<p><strong>Total Interest: $</strong>${parseFloat(
       interest
     ).toFixed(2)}</p></div>`;
     table += `<table style="width:100%;text-align:center"><thead style="text-decoration:underline"><th>Due Date</th><th>Interest Rate</th><th>Payment</th><th>Interest Amount</th><th>Total Payment</th><th>Payments to Date</th><th>Total Remaining</th></thead><tbody>`;
@@ -233,7 +233,6 @@ $(document).ready(function () {
     var html = createHTML({
       title: `Billing Information`,
       head: `<meta name="viewport" content="width=device-width, initial-scale=1" />`,
-      css: "./index.css",
       body: table,
     });
     if (!fs.existsSync(appDir + "/accounts")) {
