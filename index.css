@@ -1,3 +1,94 @@
-.form-container {
-  width: 50%;
+h1,
+h2 {
+  text-align: center;
+  font-family: "Anton", sans-serif;
+}
+
+.customer-info-header,
+.finance-info-header,
+.copyright-section {
+  font-family: "Anton", sans-serif;
+  font-weight: bold;
+}
+.form {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.copyright-section {
+  text-align: center;
+}
+
+.submitSection {
+  text-align: center;
+}
+
+.accountTable {
+  width: 100%;
+  text-align: center;
+}
+
+.customer-info,
+.finance-info {
+  border: 2px solid black;
+}
+
+.customer-info-header,
+.finance-info-header {
+  border-bottom: 2px solid black;
+  background: black;
+  color: white;
+  padding: 2px;
+}
+
+.companyNameForm {
+  margin: 0 auto;
+  width: 65%;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+}
+#addCompanyName,
+#selectBut {
+  margin-top: 10px;
+}
+
+#nameInput,
+#firstAddInput,
+#cityInput,
+#phoneInput,
+#totalAmountDue,
+#dateFirstPayment {
+  margin: 10px;
+}
+#stateInput {
+  margin: 10px 0 0 0;
+}
+#lastnameInput,
+#sectAddInput,
+#postalCodeInputInput,
+#emailInput,
+#interestRate,
+#lengthLoan {
+  margin: 10px -10px;
+}
+#submitBut,
+#addCompanyName. #selectBut {
+  background: darkgray;
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+.dropdown,
+#select {
+  text-align: center;
+}
+
+table {
+  width: 100%;
 }

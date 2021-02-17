@@ -1,75 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fi</title>
+    <title>Financer</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="index.css" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"
+      onload="window.$ = window.jQuery = module.exports;"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <script src="index.js"></script>
   </head>
   <body>
-    <div class="jumbotron text-center">
-      <h1>Fi</h1>
-      <p>Resize this responsive page to see the effect!</p>
-    </div>
+    <div class="container">
+      <br />
+      <br />
+      <h1>Financer</h1>
+      <h2><span id="companyName"></span></h2>
+      <br />
+      <div class="dropdown">
+        <select id="companyChoose"></select>
+      </div>
+      <div id="select">
+        <button class="hide" id="selectBut">Select</button>
+      </div>
 
-    <!--<div class="container">-->
-    <div class="row">
-      <div class="col-sm-2">
-        <h3 class="container"><u>Menu</u></h3>
-        <!-- A vertical navbar -->
-        <nav class="navbar bg-light">
-          <!-- Links -->
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Schedule</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="new.html">New</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="open.html">Open</a>
-            </li>
-          </ul>
-        </nav>
+      <div class="companyNameForm">
+        <form id="companyForm" class="hide">
+          <input
+            type="text"
+            id="compName"
+            placeholder="Company Name"
+            name="companyname"
+            required
+          />
+          <button type="submit" id="addCompanyName">Add New</button>
+        </form>
       </div>
-      <div class="col-sm-10">
-        <h3>Schedule</h3>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>Rate</th>
-              <th>Ammount Due</th>
-              <th>Prinsible After month</th>
-              <th>Paid</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+
+      <br />
+      <div class="form">
+        <form id="billingForm">
+          <div class="customer-info">
+            <div class="customer-info-header">
+              <div class="row">
+                <div class="col-12">Customer Information</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="text"
+                  id="nameInput"
+                  placeholder="First Name"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  type="text"
+                  id="lastnameInput"
+                  placeholder="Last Name"
+                  name="lastname"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="text"
+                  id="firstAddInput"
+                  placeholder="Address 1"
+                  name="address1"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  type="text"
+                  id="sectAddInput"
+                  placeholder="Address 2"
+                  name="address2"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <input
+                  type="text"
+                  id="cityInput"
+                  placeholder="City"
+                  name="city"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <input
+                  type="text"
+                  id="stateInput"
+                  placeholder="State"
+                  name="state"
+                  required
+                />
+              </div>
+              <div class="col-4">
+                <input
+                  type="number"
+                  id="postalCodeInputInput"
+                  placeholder="Zip Code"
+                  name="postalcode"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="tel"
+                  id="phoneInput"
+                  placeholder="Phone Number"
+                  name="phone"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  type="email"
+                  id="emailInput"
+                  placeholder="Email"
+                  name="email"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="finance-info">
+            <div class="finance-info-header">
+              <div class="row">
+                <div class="col-12">Finance Information</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <input
+                  id="totalAmountDue"
+                  placeholder="Amount Financed"
+                  name="totalamountdue"
+                  required
+                  type="number"
+                  step="0.01"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  id="interestRate"
+                  placeholder="Interest Rate %"
+                  name="interestrate"
+                  type="number"
+                  step="0.01"
+                  required
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <input
+                  type="text"
+                  id="dateFirstPayment"
+                  placeholder="Date of 1st Payment"
+                  name="datefirstpayment"
+                  onfocus="(this.type='date')"
+                  onblur="(this.type='text')"
+                  trwuitrf
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  id="lengthLoan"
+                  placeholder="Loan Length"
+                  name="lengthofloan"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-12 submitSection">
+              <button type="submit" id="submitBut">Submit</button>
+            </div>
+          </div>
+        </form>
+        <br />
+        <br />
+        <div class="row copyright-section">
+          <div class="col-12">
+            <p>
+              &copy; <span id="copyrightYear"></span> Arielle Griffin & Adam
+              Telford Webdesk-me
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    <!--</div>-->
   </body>
 </html>
